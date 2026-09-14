@@ -239,10 +239,7 @@ $$
 \Delta x
 -
 L_x
-\operatorname{round}
-\left(
-\frac{\Delta x}{L_x}
-\right).
+\operatorname{round}\left(\frac{\Delta x}{L_x}\right).
 $$
 
 Similarly for \(y\) and \(z\).
