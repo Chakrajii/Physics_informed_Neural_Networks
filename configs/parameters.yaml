@@ -1,0 +1,57 @@
+# configs/parameters.yaml
+
+system:
+  dimension: 2
+  box_length: 800.0     # Matches BOX = 800 in lj_mc_simulation.py
+  temperature: 1.0      # Matches TEMPERATURE = 1.0
+
+snapshots:
+  # Updated path to reflect the new folder structure
+  path: "simulation/output/positions_trajectory.csv"
+  format: "csv"
+
+  mc_column: "mc_iteration"
+  particle_column: "particle_id"
+  x_column: "x"
+  y_column: "y"
+  z_column: null
+
+rdf:
+  # Your LJ sigma is 0.3, so the potential is effectively 0 beyond r=3 or 4.
+  # r_max=10.0 is more than enough and saves computation time.
+  r_min: 0.0
+  r_max: 10.0
+  dr: 0.02
+
+potential:
+  g_floor: 1.0e-8
+  potential_cap: 50.0
+  fit_r_min: 0.02
+  fit_r_max: 10.0
+  smooth_sigma_bins: 2.0
+  tail_fraction: 0.2
+
+ibi:
+  alpha: 0.2
+  max_iterations: 20
+  tolerance: 1.0e-2
+  use_previous_positions: true
+  weighted_error: false
+
+monte_carlo:
+  n_particles: 500      # Matches N_PARTICLES = 500
+  seed: 2024
+
+  equilibration_sweeps: 2000
+  production_sweeps: 5000
+  sample_every_sweeps: 50
+
+  max_displacement: 0.5
+  target_acceptance: 0.4
+  adapt_displacement: true
+
+validation:
+  equilibration_sweeps: 5000
+  production_sweeps: 10000
+  sample_every_sweeps: 50
+  seed: 9999
