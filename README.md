@@ -87,13 +87,7 @@ Assume we are given \(M\) equilibrium snapshots.
 Each snapshot contains \(N\) particles:
 
 $$
-S_k =
-\left\{
-\mathbf r_1^{(k)},
-\mathbf r_2^{(k)},
-\ldots,
-\mathbf r_N^{(k)}
-\right\}
+S_k =\left\{\mathbf r_1^{(k)},\mathbf r_2^{(k)},\ldots,\mathbf r_N^{(k)}\right\}
 $$
 
 where
