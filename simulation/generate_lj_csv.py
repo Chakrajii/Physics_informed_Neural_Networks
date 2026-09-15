@@ -11,7 +11,7 @@ just keep the same two-column [r, U] format and 0.1 spacing from 0 to 800.
 import numpy as np
 import pandas as pd
 
-sigma = 0.3   # chosen so the repulsive wall sits well below the lattice
+sigma = 2.0   # chosen so the repulsive wall sits well below the lattice
               # spacing of 1 -- with sigma=1 the wall sits AT the lattice
               # spacing and every adjacent pair gets hit with a huge force,
               # causing runaway velocities regardless of the update rule.
@@ -19,6 +19,8 @@ sigma = 0.3   # chosen so the repulsive wall sits well below the lattice
               # 800-unit box; if it's similar to sigma=1 here you'll see the
               # same runaway and will want to rescale distances or damp dt.
 epsilon = 1.0
+
+
 
 r = np.round(np.arange(0.0, 800.0 + 1e-9, 0.1), 1)
 U = np.empty_like(r)
